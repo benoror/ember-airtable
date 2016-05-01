@@ -1,0 +1,12 @@
+<h3>Inventories</h3>
+
+<ul>
+  {{#each model as |inventory|}}
+  <li>
+    (qty: {{inventory.qty}})
+    {{#if inventory.needsRestocking}}
+      <strong>Needs Restocking!!</strong>
+    {{/if}}
+  </li>
+  {{/each}}
+</ul>
