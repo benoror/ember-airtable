@@ -12,10 +12,14 @@
     "test": "ember try:testall"
   },
   "repository": "https://github.com/benoror/ember-airtable",
+  "bugs": {
+    "url": "https://github.com/benoror/ember-airtable/issues"
+  },
+  "homepage": "https://github.com/benoror/ember-airtable",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Ben Orozco <benoror@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
@@ -40,7 +44,12 @@
     "loader.js": "^4.0.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-data",
+    "airtable",
+    "api",
+    "adapter",
+    "serializer"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6"
