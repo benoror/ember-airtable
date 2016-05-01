@@ -1,8 +1,11 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  product: DS.attr('string'), // ToDo: Refactor to belongsTo
+  product: DS.belongsTo('product', { async: true }),
   qty: DS.attr('number'),
-  restockAt: DS.attr('number')
-  // ToDo: needsRestocking: computed qty <= restockAt
+  "restock-at": DS.attr('number'),
+  needsRestocking: Ember.computed('qty', 'restock-at', function() {
+    return this.get('qty') <= this.get('restock-at');
+  })
 });

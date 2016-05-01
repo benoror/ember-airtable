@@ -3,6 +3,7 @@
 <ul>
   {{#each model as |inventory|}}
   <li>
+    {{inventory.product.name}}
     (qty: {{inventory.qty}})
     {{#if inventory.needsRestocking}}
       <strong>Needs Restocking!!</strong>
