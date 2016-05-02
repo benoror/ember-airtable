@@ -1,9 +1,11 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 
+const inflector = new Ember.Inflector();
+
 export default DS.RESTSerializer.extend({
   normalizeResponse(store, type, payload) {
-    const modelNamePlural = type.modelName + 's'; // ToDo: Fix to pluralize // Ember.String.*
+    const modelNamePlural = inflector.pluralize(type.modelName);
 
     if(payload.records) {
       payload[modelNamePlural] = payload.records;
