@@ -26,6 +26,52 @@ Ember addon for [Airtable](airtable.com) APIs
 
 *Originally based on: https://github.com/benoror/fieldbook-app
 
+# Usage
+
+## Install
+
+```
+ember install ember-airtable
+```
+
+## Adapter
+
+Use **AirtableAdapter** as you application's main adapter:
+
+##### **`adapters/application.js`**:
+
+```JavaScript
+import AirtableAdapter from "ember-airtable/adapter";
+
+export default AirtableAdapter.extend({
+
+  // API Version + Base ID
+  namespace: 'v0/app_YOUR_AIRTABLE_BASE_KEY',
+
+  headers: {
+    'Accept': 'application/json',
+    // API Token
+    'Authorization': `Bearer key_YOUR_AIRTABLE_API_KEY`
+  }
+});
+
+```
+
+## Serializer
+
+Use **AirtableSerializer** as you application's main serializer:
+
+##### **`serializers/application.js`**:
+
+```JavaScript
+import AirtableSerializer from "ember-airtable/serializer";
+
+export default AirtableSerializer.extend();
+
+```
+
+# Development
+
 ## Installation
 
 * `git clone` this repository
