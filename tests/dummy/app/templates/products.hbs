@@ -2,6 +2,11 @@
 
 <ul>
   {{#each model as |product|}}
-  <li>{{product.name}}</li>
+    <li>
+      [{{product.name}}] - Components:
+      {{#each product.components as |component index|}}
+        ({{index}}) {{component.name}},
+      {{/each}}
+    </li>
   {{/each}}
 </ul>
