@@ -4,6 +4,8 @@
 
 [![Ember Observer Score](https://emberobserver.com/badges/ember-airtable.svg)](https://emberobserver.com/addons/ember-airtable)
 
+[![Build Status](https://travis-ci.org/benoror/ember-airtable.svg?branch=master)](https://travis-ci.org/benoror/ember-airtable)
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 <table>
