@@ -4,6 +4,7 @@ import DS from 'ember-data';
 const inflector = new Ember.Inflector();
 
 export default DS.RESTSerializer.extend({
+
   normalizeResponse(store, type, payload) {
     const modelNamePlural = inflector.pluralize(type.modelName);
 
@@ -32,13 +33,18 @@ export default DS.RESTSerializer.extend({
     }
 
     return this._super(...arguments);
+  },
+
+  serializeIntoHash: function(data, type, record, options) {
+    data['fields'] = this.serialize(record, options);
+  },
+
+  serialize: function(snapshot, options) {
+    let json = this._super(snapshot, options);
+
+    delete json.created;
+
+    return json;
   }
-
-  // ToDo: Improve from
-  //   https://github.com/201-created/ember-data-hal-9000/blob/master/addon/serializer.js
-
-  // keyForRelationship(key) {
-  //   return Ember.String.underscore(key);
-  // }
 
 });
