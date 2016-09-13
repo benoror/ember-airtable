@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('inventories');
   this.route('products');
   this.route('new-product');
+  this.route('new-component');
 });
 
 export default Router;

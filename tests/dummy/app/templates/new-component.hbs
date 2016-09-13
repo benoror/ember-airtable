@@ -1,0 +1,19 @@
+<h3>New Component</h3>
+
+Name: {{input value=model.name}}
+<br />
+Product: 
+<select onchange={{action 'setProduct' value="target.value"}}>
+  <option value="">Product</option>
+  {{#each products as |product|}}
+    <option value={{product.id}}>
+      {{product.name}}
+    </option>
+  {{/each}}
+</select>
+
+<br />
+<br />
+
+<button {{action 'saveComponent' model product}} type="button">Save</button>
+

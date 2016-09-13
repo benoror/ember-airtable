@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 
   actions: {
     saveProduct(product) {
-      product.save().then((results) => {
+      return product.save().then((results) => {
         console.log('saved', results);
       }, (error) => {
         console.log('error', error);

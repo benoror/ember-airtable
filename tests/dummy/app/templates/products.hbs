@@ -1,14 +1,31 @@
 <h3>Products</h3>
 
-<ul>
-  {{#each model as |product|}}
-    <li>
-      [{{product.name}}] - Components:
-      {{#each product.components as |component index|}}
-        ({{index}}) {{component.name}},
-      {{/each}}
-    </li>
-  {{/each}}
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Components</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>{{link-to 'New Product' 'new-product'}}</td>
+      <td>{{link-to 'New Component' 'new-component'}}</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    {{#each model as |product|}}
+      <tr>
+        <td>{{product.name}}</td>
+        <td>
+          {{#each product.components as |component|}}
+            {{component.name}},
+          {{/each}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
 
-{{link-to 'New Product' 'new-product'}}
+<hr />
+
