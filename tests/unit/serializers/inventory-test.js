@@ -2,47 +2,14 @@ import { moduleForModel, test } from 'ember-qunit';
 import Pretender from 'pretender';
 
 // ToDo: Install ember-cli-faker
+import mocks from './mocks';
+const { 
+  inventoryMock, 
+  productMock, 
+  componentsMock 
+} = mocks;
 
 let mockServer;
-
-const productMock = {
-  id: 'product123',
-  createdTime: (new Date()).toISOString(),
-  fields: {
-    name: 'foo',
-    description: 'bar',
-    components: ['componentA', 'componentB']
-  }
-};
-
-const inventoryMock = {
-  id: 'inventory123',
-  createdTime: (new Date()).toISOString(),
-  fields: {
-    product: ['product123'],
-    qty: 5,
-    'restock-at': 10
-  }
-};
-
-const componentsMock = [
-  {
-    id: 'componentA',
-    createdTime: (new Date()).toISOString(),
-    fields: {
-      name: 'pieceA',
-      product: ['product123']
-    }
-  },
-  {
-    id: 'componentB',
-    createdTime: (new Date()).toISOString(),
-    fields: {
-      name: 'pieceB',
-      product: ['product123']
-    }
-  }
-];
 
 moduleForModel('inventory', 'Unit | Serializer | inventory', {
   needs: ['serializer:application',

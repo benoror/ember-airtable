@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return this.store.createRecord('component');
   },
 
-  setupController(controller, model) {
+  setupController(controller/*, model*/) {
     controller.set('products', this.store.findAll('product'));
     this._super(...arguments);
   },
