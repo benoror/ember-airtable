@@ -5,4 +5,22 @@ Name: {{input value=model.name}}
 <br />
 <br />
 
+Initial Component: 
+
+{{#each newComponentsIds as |newComponentId|}}
+  {{newComponentId}}
+{{/each}}
+
+
+<select onchange={{action 'addComponent' value="target.value"}}>
+  <option value="">Component</option>
+  {{#each components as |component|}}
+    <option value={{component.id}}>
+      {{component.name}}
+    </option>
+  {{/each}}
+</select>
+
+<hr />
+
 <button {{action 'saveProduct' model}} type="button">Save</button>
