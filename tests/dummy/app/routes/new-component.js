@@ -11,13 +11,14 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    saveComponent(component, product) {
-      component.set('product', product);
-      return component.save().then((results) => {
-        console.log('saved', results);
-        this.transitionTo('products');
-      }, (error) => {
-        console.log('error', error);
+    saveComponent(component, productId) {
+      return this.get('store').findRecord('product', productId).then((p) => {
+        component.set('product', p);
+        return component.save().then((results) => {
+          return this.transitionTo('products');
+        }, (error) => {
+          return console.log('error', error);
+        });
       });
     }
   }

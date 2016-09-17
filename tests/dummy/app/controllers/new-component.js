@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  product: null,
+  productId: null,
 
   actions: {
     setProduct(productId) {
-      this.set('product.id', productId);
+      this.set('productId', productId);
     }
   }
 });

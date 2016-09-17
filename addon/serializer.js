@@ -45,6 +45,16 @@ export default DS.RESTSerializer.extend({
     delete json.created;
 
     return json;
+  },
+
+  serializeBelongsTo: function(snapshot, json, relationship) {
+    let key = relationship.key;
+    let belongsTo = snapshot.belongsTo(key, { id: true });
+    key = this.keyForRelationship
+      ? this.keyForRelationship(key, "belongsTo", "serialize") : key;
+    json[key] = Ember.isNone(belongsTo) ? [] : [ belongsTo ];
+    // overriden from:
+    // https://github.com/emberjs/data/blob/v2.7.0/addon/serializers/json.js#L1180
   }
 
 });
