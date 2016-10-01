@@ -14,7 +14,7 @@ export default Ember.Route.extend({
     saveComponent(component, productId) {
       return this.get('store').findRecord('product', productId).then((p) => {
         component.set('product', p);
-        return component.save().then((results) => {
+        return component.save().then(() => {
           return this.transitionTo('products');
         }, (error) => {
           return console.log('error', error);

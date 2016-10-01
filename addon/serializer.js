@@ -52,8 +52,9 @@ export default DS.RESTSerializer.extend({
     // https://github.com/emberjs/data/blob/v2.7.0/addon/serializers/json.js#L1180
     let key = relationship.key;
     let belongsTo = snapshot.belongsTo(key, { id: true });
-    key = this.keyForRelationship
-      ? this.keyForRelationship(key, "belongsTo", "serialize") : key;
+    if(this.keyForRelationship) {
+      key = this.keyForRelationship(key, "belongsTo", "serialize");
+    }
     json[key] = Ember.isNone(belongsTo) ? [] : [ belongsTo ];
   },
 
@@ -62,8 +63,9 @@ export default DS.RESTSerializer.extend({
     // https://github.com/emberjs/data/blob/v2.7.0/addon/serializers/json.js#L1232
     let key = relationship.key;
     let hasMany = snapshot.hasMany(key, { ids: true });
-    key = this.keyForRelationship
-      ? this.keyForRelationship(key, "hasMany", "serialize") : key;
+    if(this.keyForRelationship) {
+      key = this.keyForRelationship(key, "hasMany", "serialize");
+    }
     json[key] = Ember.isNone(hasMany) ? [] : hasMany;
   }
 
