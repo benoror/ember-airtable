@@ -4,5 +4,6 @@ export default DS.Model.extend({
   created: DS.attr('date'),
   name: DS.attr('string'),
   description: DS.attr('string'),
-  components: DS.hasMany('component')
+  components: DS.hasMany('component'),
+  formula_ronly: DS.attr('string', { readOnly: true })
 });

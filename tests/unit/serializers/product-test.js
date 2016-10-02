@@ -32,9 +32,11 @@ test('it serializes records', function(assert) {
 
   Ember.run(function(){
     record.set('name', 'testName');
+    record.set('formula_ronly', 'testROnly');
     serializedRecord = record.serialize();
     assert.ok(serializedRecord);
     assert.equal(serializedRecord['name'], 'testName');
+    assert.equal(serializedRecord['formula_ronly'], undefined);
   });
 
   //Ember.run(function(){
