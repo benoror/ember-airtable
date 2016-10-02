@@ -67,6 +67,13 @@ export default DS.RESTSerializer.extend({
       key = this.keyForRelationship(key, "hasMany", "serialize");
     }
     json[key] = Ember.isNone(hasMany) ? [] : hasMany;
+  },
+
+  serializeAttribute(snapshot, json, key, attribute) {
+    if (attribute.options && attribute.options.readOnly) {
+      return;
+    }
+    this._super(...arguments);
   }
 
 });

@@ -72,6 +72,21 @@ export default AirtableSerializer.extend();
 
 ```
 
+## Models
+
+If you want to skip persistance of certain attributes (ex. formula columns) add the `readOnly` option:
+
+##### **`models/product.js`**:
+
+```JavaScript
+import DS from 'ember-data';
+
+export default DS.Model.extend({
+  formula: DS.attr('string', { readOnly: true })
+});
+
+```
+
 # Development
 
 ## Installation
