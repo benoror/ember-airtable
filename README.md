@@ -20,7 +20,7 @@
   </tr>
 </table>
 
-Ember addon for [Airtable](airtable.com) APIs
+Ember addon for [Airtable](https://airtable.com/) APIs
 
 **Dummy app**: https://github.com/benoror/ember-airtable/tree/master/tests/dummy/app
 
