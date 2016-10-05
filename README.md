@@ -83,6 +83,35 @@ export default DS.Model.extend({
 
 ```
 
+## Querying Airtable API
+
+You can use all of the [API features](https://airtable.com/api) when querying Airtable:
+
+##### **`routes/products.js`**:
+
+```JavaScript
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model() {
+    return this.store.query('product', {
+      // Only data for fields whose names are in this list will be included in the records.
+      fields: ['name', 'description'],
+      // A formula used to filter records.
+      filterByFormula: "NOT({name} = 'MacBook')",
+      // The maximum total number of records that will be returned.
+      maxRecords: 50,
+      // The number of records returned in each request.
+      pageSize: 10,
+      // A list of sort objects that specifies how the records will be ordered.
+      sort: [{field: "name", direction: "desc"}],
+      // The name or ID of a view in the table. 
+      view: 'active_products'
+    });
+  }
+});
+```
+
 # Development
 
 ## Installation
