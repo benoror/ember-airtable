@@ -1,5 +1,9 @@
 # ember-airtable
 
+**Blog post**: https://medium.com/@benoror/creating-an-ember-addon-for-airtable-api-d9e38d7bef97#.33q0r7hhm
+
+**Node Proxy (Optional)**: https://github.com/benoror/airtable-api-proxy
+
 [![NPM](https://nodei.co/npm/ember-airtable.png)](https://npmjs.org/package/ember-airtable)
 
 ![Download count all time](https://img.shields.io/npm/dt/ember-airtable.svg) [![Ember Observer Score](https://emberobserver.com/badges/ember-airtable.svg)](https://emberobserver.com/addons/ember-airtable) [![Build Status](https://travis-ci.org/benoror/ember-airtable.svg?branch=master)](https://travis-ci.org/benoror/ember-airtable) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -19,8 +23,6 @@
 Ember addon for [Airtable](https://airtable.com/) APIs
 
 **Dummy app**: https://github.com/benoror/ember-airtable/tree/master/tests/dummy/app
-
-**Medium post**: https://medium.com/@benoror/creating-an-ember-addon-for-airtable-api-d9e38d7bef97#.33q0r7hhm
 
 *Originally based on: https://github.com/benoror/fieldbook-app
 
